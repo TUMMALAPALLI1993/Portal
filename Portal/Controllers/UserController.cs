@@ -74,7 +74,7 @@ namespace Portal.Controllers
         {
             int userID =(int) Session["UserID"];
             Session.Abandon();
-            return RedirectToAction("Login", "Home");
+            return RedirectToAction("Login", "User");
         }
     }
 }
