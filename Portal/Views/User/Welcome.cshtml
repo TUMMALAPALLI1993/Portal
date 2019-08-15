@@ -1,0 +1,27 @@
+﻿@model Portal.Models.User
+
+@{
+    ViewBag.Title = "Welcome";
+    if (Session["UserID"] == null)
+    {
+        Response.Redirect("~/User/Login");
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>User Home</title>
+</head>
+
+<body>
+    <div>
+        <h1>Welcome @Session["UserName"]</h1>
+
+        <a href="@Url.Action("Logout","User")">Logout</a>
+    </div>
+</body>
+</html>
+

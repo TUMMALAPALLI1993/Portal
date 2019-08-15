@@ -27,6 +27,7 @@ namespace Portal.Models
         [DataType(DataType.Password)]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
+        public string LoginError { get; set; }
         public Nullable<bool> isAdmin { get; set; }
     }
 }
