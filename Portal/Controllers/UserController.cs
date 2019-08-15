@@ -24,6 +24,7 @@ namespace Portal.Controllers
                 if (db.Users.Any(x => user.UserName == x.UserName))
                 {
                     ViewBag.DuplicateMessage = "User Name '" + user.UserName + "' already exists";
+                    return View("CreateOrEditUser", user);
                 }
                 else
                 {
@@ -32,7 +33,7 @@ namespace Portal.Controllers
                 }
                 
             }
-            ViewBag.successmessage = "Successfully " + user.UserName + " added to the portal";
+            ViewBag.successmessage = "Successfully '" + user.UserName + "' added to the portal";
             ModelState.Clear();
             return View("CreateOrEditUser",new User());
         }
